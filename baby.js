@@ -1,6 +1,9 @@
 var result = 0;
-for (i = 2; i < process.argv.length; i++) {
-  result += Number(process.argv[i]);
-}
+
+Array.prototype.forEach.call(process.argv, function (elem, i) {
+    if (i >= 2) {
+        result += +elem;
+    }
+});
 
 console.log(result);
